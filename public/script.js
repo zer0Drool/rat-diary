@@ -71,7 +71,7 @@ let diary = [
     	Reviews: 4.5/5 * from 572 Ratings
     	Price: £10.99
 
-    stored - 1593309810`,
+stored - 1593309810`,
     `threat level ~ HIGH`,
     `searching viable escape routes`,
     'ARCHIVE',
@@ -859,6 +859,7 @@ function ouch() {
         damageP.classList.add('fade');
         terminal.appendChild(document.createElement('br'));
         terminal.appendChild(damageP);
+        terminal.appendChild(document.createElement('br'));
         terminal.appendChild(document.createElement('br'));
     };
 

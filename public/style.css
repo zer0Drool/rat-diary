@@ -3,7 +3,7 @@
     color: deeppink;
     font-family: 'Roboto Mono', monospace;
     /* font-style: italic; */
-    font-size: 14px;
+    font-size: 0.75vw;
     text-shadow: 1px 1px 5px red;
     cursor: none;
     user-select: none;
