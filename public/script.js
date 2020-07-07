@@ -54,7 +54,7 @@ let diary = [
     `compiling errors`,
     `organic shell compromised`,
     `localise`,
-    `damage located at: s-AB Bridge ( rat tail )`,
+    `DAMAGE`,
     `mobility status ~ null`,
     `sudo manual override`,
     `#### merging with genome structures ####`,
@@ -139,13 +139,9 @@ function readDiary() {
     } else if (diary[diaryCount] === 'ERROR') {
         clearInterval(diaryInt);
         errInt = setInterval(err, 200);
-        // let p = document.createElement('p');
-        // p.innerText = `≠!≠!≠!≠!≠!≠!≠ SYSTEM ≠!≠!≠!≠!≠!≠!≠!≠!≠!
-        // ≠!≠!≠!!≠!≠! INTERRUPTED ≠!≠!≠!≠!≠!≠!!≠!`;
-        // p.classList.add('flash');
-        // terminal.appendChild(document.createElement('br'));
-        // terminal.appendChild(p);
-        // terminal.appendChild(document.createElement('br'));
+    } else if (diary[diaryCount] === 'DAMAGE') {
+        clearInterval(diaryInt);
+        damageInt = setInterval(ouch, 400);
     } else if (diary[diaryCount] === 'REBOOT') {
         clearInterval(diaryInt);
         let p = document.createElement('p');
@@ -722,6 +718,156 @@ function err() {
     if (errCount === error.length) {
         clearInterval(errInt);
         errCount = 0;
+        diaryInt = setInterval(readDiary, 700);
+    };
+
+};
+
+
+// ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠
+
+let damageInt;
+let damageCount = 0;
+let damageP;
+let damage = [
+`damage located at: s-AB Bridge ( rat tail )
+
+             ..----.._    _
+            .' .--.    "-.(O)_
+'-.__.-'"'=:|  ,  _)_ \__ . c\'-..
+             ''------'---''---'-"`,
+`damage located at: s-AB Bridge ( rat tail )
+
+             ..----.._    _
+            .' .--.    "-.(O)_
+       '"'=:|  ,  _)_ \__ . c\'-..
+             ''------'---''---'-"`,
+`damage located at: s-AB Bridge ( rat tail )
+
+             ..----.._    _
+            .' .--.    "-.(O)_
+'-.__.-'"'=:|  ,  _)_ \__ . c\'-..
+             ''------'---''---'-"`,
+`damage located at: s-AB Bridge ( rat tail )
+
+             ..----.._    _
+            .' .--.    "-.(O)_
+       '"'=:|  ,  _)_ \__ . c\'-..
+             ''------'---''---'-"`,
+`damage located at: s-AB Bridge ( rat tail )
+
+             ..----.._    _
+            .' .--.    "-.(O)_
+'-.__.-'"'=:|  ,  _)_ \__ . c\'-..
+             ''------'---''---'-"`,
+`damage located at: s-AB Bridge ( rat tail )
+
+             ..----.._    _
+            .' .--.    "-.(O)_
+       '"'=:|  ,  _)_ \__ . c\'-..
+             ''------'---''---'-"`,
+`damage located at: s-AB Bridge ( rat tail )
+
+             ..----.._    _
+            .' .--.    "-.(O)_
+'-.__.-'"'=:|  ,  _)_ \__ . c\'-..
+             ''------'---''---'-"`,
+`damage located at: s-AB Bridge ( rat tail )
+
+             ..----.._    _
+            .' .--.    "-.(O)_
+       '"'=:|  ,  _)_ \__ . c\'-..
+             ''------'---''---'-"`,
+`damage located at: s-AB Bridge ( rat tail )
+
+             ..----.._    _
+            .' .--.    "-.(O)_
+'-.__.-'"'=:|  ,  _)_ \__ . c\'-..
+             ''------'---''---'-"`,
+`damage located at: s-AB Bridge ( rat tail )
+
+             ..----.._    _
+            .' .--.    "-.(O)_
+       '"'=:|  ,  _)_ \__ . c\'-..
+             ''------'---''---'-"`,
+`damage located at: s-AB Bridge ( rat tail )
+
+             ..----.._    _
+            .' .--.    "-.(O)_
+'-.__.-'"'=:|  ,  _)_ \__ . c\'-..
+             ''------'---''---'-"`,
+`damage located at: s-AB Bridge ( rat tail )
+
+             ..----.._    _
+            .' .--.    "-.(O)_
+       '"'=:|  ,  _)_ \__ . c\'-..
+             ''------'---''---'-"`,
+`damage located at: s-AB Bridge ( rat tail )
+
+             ..----.._    _
+            .' .--.    "-.(O)_
+'-.__.-'"'=:|  ,  _)_ \__ . c\'-..
+             ''------'---''---'-"`,
+`damage located at: s-AB Bridge ( rat tail )
+
+             ..----.._    _
+            .' .--.    "-.(O)_
+       '"'=:|  ,  _)_ \__ . c\'-..
+             ''------'---''---'-"`,
+`damage located at: s-AB Bridge ( rat tail )
+
+             ..----.._    _
+            .' .--.    "-.(O)_
+'-.__.-'"'=:|  ,  _)_ \__ . c\'-..
+             ''------'---''---'-"`,
+`damage located at: s-AB Bridge ( rat tail )
+
+             ..----.._    _
+            .' .--.    "-.(O)_
+       '"'=:|  ,  _)_ \__ . c\'-..
+             ''------'---''---'-"`,
+`damage located at: s-AB Bridge ( rat tail )
+
+             ..----.._    _
+            .' .--.    "-.(O)_
+'-.__.-'"'=:|  ,  _)_ \__ . c\'-..
+             ''------'---''---'-"`,
+`damage located at: s-AB Bridge ( rat tail )
+
+             ..----.._    _
+            .' .--.    "-.(O)_
+       '"'=:|  ,  _)_ \__ . c\'-..
+             ''------'---''---'-"`,
+`damage located at: s-AB Bridge ( rat tail )
+
+             ..----.._    _
+            .' .--.    "-.(O)_
+'-.__.-'"'=:|  ,  _)_ \__ . c\'-..
+             ''------'---''---'-"`,
+`damage located at: s-AB Bridge ( rat tail )
+
+             ..----.._    _
+            .' .--.    "-.(O)_
+       '"'=:|  ,  _)_ \__ . c\'-..
+             ''------'---''---'-"`,
+];
+
+function ouch() {
+
+    if (damageCount === 0) {
+        damageP = document.createElement('p');
+        damageP.classList.add('fade');
+        terminal.appendChild(document.createElement('br'));
+        terminal.appendChild(damageP);
+        terminal.appendChild(document.createElement('br'));
+    };
+
+    damageP.innerText = damage[damageCount];
+    damageCount++;
+
+    if (damageCount === damage.length) {
+        clearInterval(damageInt);
+        damageCount = 0;
         diaryInt = setInterval(readDiary, 700);
     };
 
