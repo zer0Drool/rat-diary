@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    color: deeppink;
+    font-family: 'Roboto Mono', monospace;
+    /* font-style: italic; */
+    font-size: 12px;
+    text-shadow: 1px 1px 5px red;
+}
+
+body {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    /* background: linear-gradient(to right, black, rgb(233, 124, 255)); */
+}
+
+#terminal, #reaction {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 50%;
+    height: 100%;
+    /* background-color: lime; */
+}
+
+p {
+    white-space: pre;
+}
+
+.fade {
+    animation: fade 0.3s ease-in-out 1;
+}
+
+.flash {
+    animation: flash 0.3s ease-in-out infinite;
+}
+
+@keyframes fade {
+    0%   {opacity: 0; transform: translateY(10px)}
+    100% {opacity: 1; transform: translateY(0px)}
+}
+
+@keyframes flash {
+    0%   {opacity: 0}
+    50%  {opacity: 1}
+    100% {opacity: 0}
+}
