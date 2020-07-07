@@ -1,4 +1,4 @@
-let logo = `  /////////////////////////////////////////////////////////
+let logo = `____________________________________________________________
 
 
      ________ _______   ___   _________
@@ -32,7 +32,7 @@ let logo = `  /////////////////////////////////////////////////////////
         neuroX© v7.0.2 2038
 
 
-  //////////////////////////////////////////////////////////`
+____________________________________________________________`
 
 let diary = [
     'static detected',
@@ -84,7 +84,7 @@ let diary = [
     `diverting power to s-STRUT D + s-STRUT E ( rat arms ) && recomense unsetting && break mouse trap`,
     `s-AB Bridge ( rat tail ) ~ lost`,
     `initiate scabbing program`,
-    `resume corse to data hub`,
+    `resume course to data hub`,
     `tracking`,
     `USB 3.0 port found`,
     `jacking in`,
