@@ -5,6 +5,8 @@
     /* font-style: italic; */
     font-size: 12px;
     text-shadow: 1px 1px 5px red;
+    cursor: none;
+    user-select: none;
 }
 
 body {
@@ -25,8 +27,22 @@ body {
     /* background-color: lime; */
 }
 
+#terminal {
+    background: linear-gradient(to right, black, transparent);
+}
+
+#reaction {
+    background: linear-gradient(to left, black, transparent);
+}
+
 p {
     white-space: pre;
+}
+
+video {
+    position: fixed;
+    z-index: -1;
+    width: 100%;
 }
 
 .fade {
