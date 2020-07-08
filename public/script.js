@@ -70,7 +70,9 @@ let diary = [
 	Reviews: 4.5/5 * from 572 Ratings
 	Price: £10.99
 
-stored - 1593309810`,
+stored - 1593309810
+
+`,
     `threat level ~ HIGH`,
     `searching viable escape routes`,
     'ARCHIVE',
@@ -87,7 +89,6 @@ stored - 1593309810`,
             .' .--.    "-.(O)_
 X X X X"'=:|  ,  _)_ \__ . c\'-..
              ''------'---''---'-"
-
 
 `,
     `initiate scabbing program`,
@@ -140,7 +141,7 @@ function readDiary() {
         terminal.appendChild(p);
     } else if (diary[diaryCount] === 'ACCURACY') {
         let p = document.createElement('p');
-        p.innerText = `accuracy ${rando(95, 72)}% - diverting course`;
+        p.innerText = `${rando(95, 72)}% certainty - diverting course`;
         p.classList.add('fade');
         terminal.appendChild(p);
     } else if (diary[diaryCount] === 'ERROR') {
@@ -634,121 +635,161 @@ let damage = [
              ..----.._    _
             .' .--.    "-.(O)_
 '-.__.-'"'=:|  ,  _)_ \__ . c\'-..
-             ''------'---''---'-"`,
+             ''------'---''---'-"
+
+`,
 `damage located at: s-AB Bridge ( rat tail )
 
              ..----.._    _
             .' .--.    "-.(O)_
        '"'=:|  ,  _)_ \__ . c\'-..
-             ''------'---''---'-"`,
+             ''------'---''---'-"
+
+`,
 `damage located at: s-AB Bridge ( rat tail )
 
              ..----.._    _
             .' .--.    "-.(O)_
 '-.__.-'"'=:|  ,  _)_ \__ . c\'-..
-             ''------'---''---'-"`,
+             ''------'---''---'-"
+
+`,
 `damage located at: s-AB Bridge ( rat tail )
 
              ..----.._    _
             .' .--.    "-.(O)_
        '"'=:|  ,  _)_ \__ . c\'-..
-             ''------'---''---'-"`,
+             ''------'---''---'-"
+
+`,
 `damage located at: s-AB Bridge ( rat tail )
 
              ..----.._    _
             .' .--.    "-.(O)_
 '-.__.-'"'=:|  ,  _)_ \__ . c\'-..
-             ''------'---''---'-"`,
+             ''------'---''---'-"
+
+`,
 `damage located at: s-AB Bridge ( rat tail )
 
              ..----.._    _
             .' .--.    "-.(O)_
        '"'=:|  ,  _)_ \__ . c\'-..
-             ''------'---''---'-"`,
+             ''------'---''---'-"
+
+`,
 `damage located at: s-AB Bridge ( rat tail )
 
              ..----.._    _
             .' .--.    "-.(O)_
 '-.__.-'"'=:|  ,  _)_ \__ . c\'-..
-             ''------'---''---'-"`,
+             ''------'---''---'-"
+
+`,
 `damage located at: s-AB Bridge ( rat tail )
 
              ..----.._    _
             .' .--.    "-.(O)_
        '"'=:|  ,  _)_ \__ . c\'-..
-             ''------'---''---'-"`,
+             ''------'---''---'-"
+
+`,
 `damage located at: s-AB Bridge ( rat tail )
 
              ..----.._    _
             .' .--.    "-.(O)_
 '-.__.-'"'=:|  ,  _)_ \__ . c\'-..
-             ''------'---''---'-"`,
+             ''------'---''---'-"
+
+`,
 `damage located at: s-AB Bridge ( rat tail )
 
              ..----.._    _
             .' .--.    "-.(O)_
        '"'=:|  ,  _)_ \__ . c\'-..
-             ''------'---''---'-"`,
+             ''------'---''---'-"
+
+`,
 `damage located at: s-AB Bridge ( rat tail )
 
              ..----.._    _
             .' .--.    "-.(O)_
 '-.__.-'"'=:|  ,  _)_ \__ . c\'-..
-             ''------'---''---'-"`,
+             ''------'---''---'-"
+
+`,
 `damage located at: s-AB Bridge ( rat tail )
 
              ..----.._    _
             .' .--.    "-.(O)_
        '"'=:|  ,  _)_ \__ . c\'-..
-             ''------'---''---'-"`,
+             ''------'---''---'-"
+
+`,
 `damage located at: s-AB Bridge ( rat tail )
 
              ..----.._    _
             .' .--.    "-.(O)_
 '-.__.-'"'=:|  ,  _)_ \__ . c\'-..
-             ''------'---''---'-"`,
+             ''------'---''---'-"
+
+`,
 `damage located at: s-AB Bridge ( rat tail )
 
              ..----.._    _
             .' .--.    "-.(O)_
        '"'=:|  ,  _)_ \__ . c\'-..
-             ''------'---''---'-"`,
+             ''------'---''---'-"
+
+`,
 `damage located at: s-AB Bridge ( rat tail )
 
              ..----.._    _
             .' .--.    "-.(O)_
 '-.__.-'"'=:|  ,  _)_ \__ . c\'-..
-             ''------'---''---'-"`,
+             ''------'---''---'-"
+
+`,
 `damage located at: s-AB Bridge ( rat tail )
 
              ..----.._    _
             .' .--.    "-.(O)_
        '"'=:|  ,  _)_ \__ . c\'-..
-             ''------'---''---'-"`,
+             ''------'---''---'-"
+
+`,
 `damage located at: s-AB Bridge ( rat tail )
 
              ..----.._    _
             .' .--.    "-.(O)_
 '-.__.-'"'=:|  ,  _)_ \__ . c\'-..
-             ''------'---''---'-"`,
+             ''------'---''---'-"
+
+`,
 `damage located at: s-AB Bridge ( rat tail )
 
              ..----.._    _
             .' .--.    "-.(O)_
        '"'=:|  ,  _)_ \__ . c\'-..
-             ''------'---''---'-"`,
+             ''------'---''---'-"
+
+`,
 `damage located at: s-AB Bridge ( rat tail )
 
              ..----.._    _
             .' .--.    "-.(O)_
 '-.__.-'"'=:|  ,  _)_ \__ . c\'-..
-             ''------'---''---'-"`,
+             ''------'---''---'-"
+
+`,
 `damage located at: s-AB Bridge ( rat tail )
 
              ..----.._    _
             .' .--.    "-.(O)_
        '"'=:|  ,  _)_ \__ . c\'-..
-             ''------'---''---'-"`,
+             ''------'---''---'-"
+
+`,
 ];
 
 function ouch() {
@@ -756,10 +797,7 @@ function ouch() {
     if (damageCount === 0) {
         damageP = document.createElement('p');
         damageP.classList.add('fade');
-        terminal.appendChild(document.createElement('br'));
         terminal.appendChild(damageP);
-        terminal.appendChild(document.createElement('br'));
-        terminal.appendChild(document.createElement('br'));
     };
 
     damageP.innerText = damage[damageCount];
