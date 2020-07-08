@@ -7,7 +7,7 @@
     text-shadow: 1px 1px 5px red;
     cursor: none;
     user-select: none;
-    pointer-events: none;
+    /* pointer-events: none; */
 }
 
 body {
