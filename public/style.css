@@ -3,7 +3,7 @@
     color: deeppink;
     font-family: 'Roboto Mono', monospace;
     /* font-style: italic; */
-    font-size: 0.75vw;
+    font-size: 0.9vw;
     text-shadow: 1px 1px 5px red;
     cursor: none;
     user-select: none;
@@ -25,6 +25,47 @@ body {
     width: 50%;
     height: 100%;
     /* background-color: lime; */
+}
+
+#reaction {
+    position: fixed;
+    align-items: flex-end;
+    height: 50%;
+    right: 0;
+    bottom: 0;
+    padding-right: 40px;
+    padding-bottom: 40px;
+    /* background-color: lime; */
+}
+
+#reaction p {
+    margin: -12px;
+}
+
+#ai {
+    position: relative;
+    margin-top: 20px;
+    /* background-color: aqua; */
+}
+
+#rat {
+    position: relative;
+    margin-right: 80px;
+    /* background-color: lime; */
+}
+
+.emoticon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    margin-top: 7px;
+    white-space: pre;
+    /* border: 2px solid gold; */
+    /* background-color: aqua; */
 }
 
 p {

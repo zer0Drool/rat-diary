@@ -1,3 +1,6 @@
+// T E R M I N A L ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠
+
+
 let logo = `____________________________________________________________
 
 
@@ -121,7 +124,9 @@ let terminal = document.getElementById('terminal');
 let diaryInt;
 let diaryCount = 0;
 
-diaryInt = setInterval(readDiary, 700);
+setTimeout(() => {
+    diaryInt = setInterval(readDiary, 700);
+}, 5000);
 
 function readDiary() {
 
@@ -1090,57 +1095,57 @@ let merging = [
                                         `,
 `  ##                                ##
                                         `,
-`   #        locating target         #
+`   #      locating pain source      #
                                         `,
-`            locating target
+`          locating pain source
                                         `,
 `
                    ##                   `,
 `
                   ####                  `,
-`            locating target
+`          locating pain source
                  ######                 `,
-`            locating target
+`          locating pain source
                 ########                `,
 `
                ##########               `,
 `
               ############              `,
-`            locating target
+`          locating pain source
              ##############             `,
-`            locating target
+`          locating pain source
             ################            `,
 `
            ##################           `,
 `
           ####################          `,
-`            locating target
+`          locating pain source
          ######################         `,
-`            locating target
+`          locating pain source
         ########################        `,
 `
        ##########################       `,
 `
       ############################      `,
-`            locating target
+`          locating pain source
      ##############################     `,
-`            locating target
+`          locating pain source
     ################################    `,
 `
    ##################################   `,
 `
   ####################################  `,
-`            locating target
+`          locating pain source
  ###################################### `,
-`            locating target
+`          locating pain source
 ########################################`,
 `#                                      #
 ########################################`,
 `##                                    ##
 ########################################`,
-`###         locating target          ###
+`###           source found           ###
 ########################################`,
-`####        locating target         ####
+`####          source found          ####
 ########################################`
 ];
 
@@ -1162,15 +1167,64 @@ function merge() {
 };
 
 
-// ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠
+// R E A C T I O N ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠
+
+
+let aiContainer = document.getElementById('ai');
+let ratContainer = document.getElementById('rat');
+let emoticons = document.getElementsByClassName('emoticon');
+
+let ai = `
+       /////=================================/
+      ////                                 //
+     ///                                 ///
+    //                                 ////
+   /=================================/////`;
+
+let aiReaction = document.createElement('p');
+aiReaction.innerText = ai;
+aiContainer.appendChild(aiReaction);
+
+let rat = `
+    /////=================================/
+   ////                                 //
+  ///                                 ///
+ //                                 ////
+/=================================/////`;
+
+let ratReaction = document.createElement('p');
+ratReaction.innerText = rat;
+ratContainer.appendChild(ratReaction);
+
+
+//≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠
+
+
+let sleepInt;
+let sleepCount = 0;
+
+let sleeping = [
+` (︶｡︶✽)      `,
+` (︶｡︶✽) ✽    `,
+` (︶｡︶✽) ✽ ✽  `,
+` (︶｡︶✽) ✽ ✽ ✽`
+];
+
+function sleep() {
+
+    emoticons[0].innerText = sleeping[sleepCount];
+    sleepCount++;
+    if (sleepCount === sleeping.length) {
+        sleepCount = 0;
+    };
+
+};
+
+sleepInt = setInterval(sleep, 250);
+
+// M I S C ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠
 
 
 function rando(max, min) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 };
-
-
-
-
-// engaging with host sight
-// locating pain source
