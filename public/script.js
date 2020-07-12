@@ -164,6 +164,7 @@ function readDiary() {
         clearInterval(diaryInt);
         clearInterval(runInt);
         emoticons[1].children[0].innerText = '';
+        shockInt = setInterval(shock, 100);
         painInt = setInterval(pain, 250);
         errInt = setInterval(err, 200);
     } else if (diary[diaryCount] === 'DAMAGE') {
@@ -174,13 +175,16 @@ function readDiary() {
         mergeInt = setInterval(merge, 100);
     } else if (diary[diaryCount] === 'REBOOT') {
         clearInterval(diaryInt);
-        clearInterval(painInt);
         let p = document.createElement('p');
         p.innerText = 'reboot now';
         p.classList.add('fade');
         terminal.appendChild(p);
         setTimeout(() => {
+            clearInterval(painInt);
+            clearInterval(shockInt);
             terminal.innerHTML = '';
+            emoticons[0].children[0].innerText = '';
+            emoticons[1].children[0].innerText = '';
             diaryInt = setInterval(readDiary, 700);
         }, 3000);
     } else if (diary[diaryCount] === 'LOGO') {
@@ -1273,7 +1277,25 @@ let painCount = 0;
 
 let hurting = [
 `               ＼(〇_ｏ)／`,
-`               ＼(ｏ_〇)／`
+`               ＼(ｏ_〇)／`,
+`               ＼(〇_ｏ)／`,
+`               ＼(ｏ_〇)／`,
+`               ＼(〇_ｏ)／`,
+`               ＼(ｏ_〇)／`,
+`               ＼(〇_ｏ)／`,
+`               ＼(ｏ_〇)／`,
+`             x ＼(〇_ｏ)／ x`,
+`           x x ＼(ｏ_〇)／ x x`,
+`         x x x ＼(〇_ｏ)／ x x x`,
+`       x x x   ＼(ｏ_〇)／   x x x`,
+`               ＼(〇_ｏ)／        `,
+`       x x x   ＼(ｏ_〇)／   x x x`,
+`               ＼(〇_ｏ)／        `,
+`       x x x   ＼(ｏ_〇)／   x x x`,
+`               ＼(〇_ｏ)／        `,
+`       x x x   ＼(ｏ_〇)／   x x x`,
+`               ＼(〇_ｏ)／        `,
+`       x x x   ＼(ｏ_〇)／   x x x`
 ];
 
 function pain() {
@@ -1282,6 +1304,43 @@ function pain() {
     painCount++;
     if (painCount === hurting.length) {
         painCount = 0;
+    };
+
+};
+
+
+//≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠
+
+
+let shockInt;
+let shockCount = 0;
+
+let shocking = [
+`               (⊙＿⊙)`,
+`                       ɾ◉⊆◉ɹ`,
+`                          (╬ಠ益ಠ)`,
+`                   (ʘдʘ╬)`,
+`                   。。。(ノ＿　＿)ノ`,
+`                   （＞μ＜＃）`,
+`              ԅ(♡﹃♡ԅ)`,
+`              ԅ(¯﹃¯ԅ)`,
+`              ԅ(♡﹃♡ԅ)`,
+`              ԅ(¯﹃¯ԅ)`,
+`                   (-@Д@)`,
+`            ¯\_( ͠° ͟ʖ °͠ )_/¯`,
+`                   ༼;´༎ຶ ༎ຶ༽`,
+`                   ＼('◓Д◔')／`,
+`                   ＼('◓Д◔')／`,
+`               （0ー0）`,
+`                   ＼('◓Д◔')／`
+];
+
+function shock() {
+
+    emoticons[0].children[0].innerText = shocking[shockCount];
+    shockCount++;
+    if (shockCount === shocking.length) {
+        shockCount = 0;
     };
 
 };
