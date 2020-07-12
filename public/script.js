@@ -24,15 +24,16 @@ let logo = `____________________________________________________________
        \\|_________|
 
 
-     ___  ________   ________
-    |\\  \\|\\   ___  \\|\\   ____\\
-    \\ \\  \\ \\  \\\\ \\  \\ \\  \\___|
-     \\ \\  \\ \\  \\\\ \\  \\ \\  \\
-      \\ \\  \\ \\  \\\\ \\  \\ \\  \\____
-       \\ \\__\\ \\__\\\\ \\__\\ \\_______\\
-        \\|__|\\|__| \\|__|\\|_______|
+       ________  ________
+      |\\   __  \\|\\   ____\\
+      \\ \\  \\|\\  \\ \\  \\___|_
+       \\ \\  \\\\\\  \\ \\_____  \\
+        \\ \\  \\\\\\  \\|____|\\  \\
+         \\ \\_______\\____\\_\\  \\
+          \\|_______|\\_________\\
+                   \\|_________|
 
-        neuroX© v7.0.2 2038
+        NeuBi Solutions© v13.3.7 2038
 
 
 ____________________________________________________________
@@ -99,7 +100,7 @@ X X X X"'=:|  ,  _)_ \__ . c\'-..
     `initiate scabbing program`,
     `resume course to data hub`,
     `tracking`,
-    `USB 3.0 port found`,
+    `USB`,
     `jacking in`,
     `accessing data hub`,
     `local storage: 4,269 directories found`,
@@ -125,6 +126,9 @@ let diaryInt;
 let diaryCount = 0;
 
 setTimeout(() => {
+    clearInterval(sleepInt);
+    sleepCount = 0;
+    emoticons[0].children[0].innerText = '';
     diaryInt = setInterval(readDiary, 700);
 }, 5000);
 
@@ -137,7 +141,12 @@ function readDiary() {
     } else if (diary[diaryCount] === 'ARCHIVE') {
         clearInterval(diaryInt);
         archiveInt = setInterval(archiveNumbers, 80);
-    } else if (diary[diaryCount] === 'tracking' || diary[diaryCount] === 'unsetting mouse trap' || diary[diaryCount] === 'localise' || diary[diaryCount] === 'entering rat vision' || diary[diaryCount] === 'diverting power to s-STRUT D + s-STRUT E ( rat arms ) && recomense unsetting && break mouse trap') {
+    } else if (diary[diaryCount] === 'tracking') {
+        let text = diary[diaryCount];
+        clearInterval(diaryInt);
+        waitingInt = setInterval(function() {waiting(text)}, 200);
+        runInt = setInterval(run, 250);
+    } else if (diary[diaryCount] === 'unsetting mouse trap' || diary[diaryCount] === 'localise' || diary[diaryCount] === 'entering rat vision' || diary[diaryCount] === 'diverting power to s-STRUT D + s-STRUT E ( rat arms ) && recomense unsetting && break mouse trap') {
         let text = diary[diaryCount];
         clearInterval(diaryInt);
         waitingInt = setInterval(function() {waiting(text)}, 200);
@@ -153,6 +162,9 @@ function readDiary() {
         terminal.appendChild(p);
     } else if (diary[diaryCount] === 'ERROR') {
         clearInterval(diaryInt);
+        clearInterval(runInt);
+        emoticons[1].children[0].innerText = '';
+        painInt = setInterval(pain, 250);
         errInt = setInterval(err, 200);
     } else if (diary[diaryCount] === 'DAMAGE') {
         clearInterval(diaryInt);
@@ -162,6 +174,7 @@ function readDiary() {
         mergeInt = setInterval(merge, 100);
     } else if (diary[diaryCount] === 'REBOOT') {
         clearInterval(diaryInt);
+        clearInterval(painInt);
         let p = document.createElement('p');
         p.innerText = 'reboot now';
         p.classList.add('fade');
@@ -173,6 +186,13 @@ function readDiary() {
     } else if (diary[diaryCount] === 'LOGO') {
         let p = document.createElement('p');
         p.innerText = logo;
+        p.classList.add('fade');
+        terminal.appendChild(p);
+    } else if (diary[diaryCount] === 'USB') {
+        clearInterval(runInt);
+        emoticons[1].children[0].innerText = '';
+        let p = document.createElement('p');
+        p.innerText = 'USB 3.0 port found';
         p.classList.add('fade');
         terminal.appendChild(p);
     } else {
@@ -1204,15 +1224,15 @@ let sleepInt;
 let sleepCount = 0;
 
 let sleeping = [
-` (︶｡︶✽)      `,
-` (︶｡︶✽) ✽    `,
-` (︶｡︶✽) ✽ ✽  `,
-` (︶｡︶✽) ✽ ✽ ✽`
+`               (︶｡︶✽)      `,
+`               (︶｡︶✽) ✽    `,
+`               (︶｡︶✽) ✽ ✽  `,
+`               (︶｡︶✽) ✽ ✽ ✽`
 ];
 
 function sleep() {
 
-    emoticons[0].innerText = sleeping[sleepCount];
+    emoticons[0].children[0].innerText = sleeping[sleepCount];
     sleepCount++;
     if (sleepCount === sleeping.length) {
         sleepCount = 0;
@@ -1221,6 +1241,51 @@ function sleep() {
 };
 
 sleepInt = setInterval(sleep, 250);
+
+
+//≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠
+
+
+let runInt;
+let runCount = 0;
+
+let running = [
+`                三┏( ^o^)┛`,
+`               三 ┗( ^o^)┓`
+];
+
+function run() {
+
+    emoticons[1].children[0].innerText = running[runCount];
+    runCount++;
+    if (runCount === running.length) {
+        runCount = 0;
+    };
+
+};
+
+
+//≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠
+
+
+let painInt;
+let painCount = 0;
+
+let hurting = [
+`               ＼(〇_ｏ)／`,
+`               ＼(ｏ_〇)／`
+];
+
+function pain() {
+
+    emoticons[1].children[0].innerText = hurting[painCount];
+    painCount++;
+    if (painCount === hurting.length) {
+        painCount = 0;
+    };
+
+};
+
 
 // M I S C ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠
 

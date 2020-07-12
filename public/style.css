@@ -3,7 +3,7 @@
     color: deeppink;
     font-family: 'Roboto Mono', monospace;
     /* font-style: italic; */
-    font-size: 0.9vw;
+    font-size: 0.85vw;
     text-shadow: 1px 1px 5px red;
     cursor: none;
     user-select: none;
@@ -64,8 +64,15 @@ body {
     width: 100%;
     margin-top: 7px;
     white-space: pre;
+    text-align: left;
     /* border: 2px solid gold; */
     /* background-color: aqua; */
+}
+
+.emoticon p {
+    width: 100%;
+    /* background-color: lime; */
+    /* border: 2px solid gold; */
 }
 
 p {
