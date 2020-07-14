@@ -109,19 +109,8 @@ X X X X"'=:|  ,  _)_ \__ . c\'-..
     `begin transfer`
 ];
 
-let reactions = [
-    '{{ (ﾉ´ヮ`)ﾉ*: ･ﾟ }}',
-    `{{ ＼(º □ º |l)/	 ＼(□ º l|l)/	 ＼＼(º □ º l|l)/	(º □  }}`,
-    `{{ (-_-;)・・・ }}`,
-    `{{ m(_ _;m) }}`,
-    `{{ (⊙_⊙) - THOSE REVIEWS! }}`,
-    `{{ ٩('皿'҂)ง  ٩('皿'҂)ง  ٩('皿'҂)ง }}`,
-    `{{ (×﹏×) }}`,
-    `{{ (ノ ˘_˘)ノ　ζ|||ζ　ζ|||ζ　ζ|||ζ }}`
-];
-
-
 let terminal = document.getElementById('terminal');
+let reaction = document.getElementById('reaction');
 let diaryInt;
 let diaryCount = 0;
 
@@ -208,7 +197,24 @@ function readDiary() {
 
     diaryCount++;
     if (diaryCount === diary.length) {
+        clearInterval(diaryInt);
         diaryCount = 0;
+        setTimeout(() => {
+            terminal.style.opacity = '0';
+            reaction.style.opacity = '0';
+            setTimeout(() => {
+                terminal.innerHTML = '';
+                terminal.style.opacity = '1';
+                reaction.style.opacity = '1';
+                sleepInt = setInterval(sleep, 250);
+                setTimeout(() => {
+                    clearInterval(sleepInt);
+                    sleepCount = 0;
+                    emoticons[0].children[0].innerText = '';
+                    diaryInt = setInterval(readDiary, 700);
+                }, 5000);
+            }, 10000);
+        }, 5000);
     };
 
 };

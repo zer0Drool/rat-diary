@@ -18,12 +18,21 @@ body {
     overflow: hidden;
 }
 
+#logo {
+    position: fixed;
+    z-index: 2;
+    width: 10%;
+    top: 10px;
+    right: 10px;
+}
+
 #terminal, #reaction {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     width: 50%;
     height: 100%;
+    transition: opacity 1.5s ease-in-out;
     /* background-color: lime; */
 }
 
