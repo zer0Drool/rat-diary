@@ -21,7 +21,7 @@ function fixGlitch(glitch) {
             glitchedAnimSpeed = false;
         }, randoCoorp(3000, 4000));
     };
-    
+
     if (glitch === 'glitchedLineHeight') {
         setTimeout(() => {
             glitchedLineHeight = false;
@@ -80,8 +80,8 @@ function coorpAnim() {
     if (currAnimFrameCoorp > coorp.length - 1) {
         currAnimFrameCoorp = 0;
     };
-    
-    animTimeoutCoorp = setTimeout(coorpAnim, glitchedAnimSpeed ? randoCoorp(1, 70) : 30);
+
+    // animTimeoutCoorp = setTimeout(coorpAnim, glitchedAnimSpeed ? randoCoorp(1, 70) : 30);
 
 };
 
