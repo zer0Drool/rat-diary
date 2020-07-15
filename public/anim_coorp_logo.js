@@ -70,8 +70,9 @@ function coorpAnim() {
         .replace(/body/g, 'div')
         .replace(/background-color:white;/, '')
         .replace(/<div/, '<div class="frame"')
-        .replace(/\d(?=px monospace;)/, '6')
+        .replace(/\d(?=px monospace;)/, '4')
         .replace(/(?<=line-height:)\d(?=px)/, glitchedLineHeight ? `${randoCoorp(5, 9)}` : '8')
+        .replace(/line-height:\d+px;/g, '')
         .replace(/(?<=style="color:#)(\w+)(?=")/g, glitchedColour ? 'ff1493' : '$1')
         .replace(/(?<=>)(.)(?=<)/g, glitchedSmiley ? ':)' : '$1')
         .replace(/(?<=<span style="color:#)(\w+)(?=">)/g, '$1; text-shadow: 1px 1px 2px #$1')
@@ -81,7 +82,7 @@ function coorpAnim() {
         currAnimFrameCoorp = 0;
     };
 
-    // animTimeoutCoorp = setTimeout(coorpAnim, glitchedAnimSpeed ? randoCoorp(1, 70) : 30);
+    animTimeoutCoorp = setTimeout(coorpAnim, glitchedAnimSpeed ? randoCoorp(1, 70) : 30);
 
 };
 

@@ -18,12 +18,16 @@ body {
     overflow: hidden;
 }
 
+span {
+    font-size: 6px;
+}
+
 #coorp-wrap {
     width: 600px;
     overflow: hidden;
     position: absolute;
     top: 10px;
-    right: 80px;
+    right: -230px;
 }
 
 #terminal, #reaction {
