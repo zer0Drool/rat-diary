@@ -10,7 +10,6 @@ function randoCoorp(min, max) {
 };
 
 let glitchedAnimSpeed = false;
-let glitchedLineHeight = false;
 let glitchedSmiley = false;
 let glitchedColour = false;
 
@@ -22,12 +21,6 @@ function fixGlitch(glitch) {
         }, randoCoorp(3000, 4000));
     };
 
-    if (glitch === 'glitchedLineHeight') {
-        setTimeout(() => {
-            glitchedLineHeight = false;
-        }, randoCoorp(60, 150));
-    };
-
     if (glitch === 'glitchedSmiley') {
         setTimeout(() => {
             glitchedSmiley = false;
@@ -37,7 +30,7 @@ function fixGlitch(glitch) {
     if (glitch === 'glitchedColour') {
         setTimeout(() => {
             glitchedColour = false;
-        }, randoCoorp(250, 700));
+        }, randoCoorp(100, 300));
     };
 
 };
@@ -47,11 +40,6 @@ function coorpAnim() {
     if (!glitchedAnimSpeed && randoCoorp(0, 500) > 498) {
         glitchedAnimSpeed = true;
         fixGlitch('glitchedAnimSpeed');
-    };
-
-    if (!glitchedLineHeight && randoCoorp(0, 800) > 795) {
-        glitchedLineHeight = true;
-        fixGlitch('glitchedLineHeight');
     };
 
     if (!glitchedSmiley && randoCoorp(0, 1600) > 1592) {
@@ -71,7 +59,6 @@ function coorpAnim() {
         .replace(/background-color:white;/, '')
         .replace(/<div/, '<div class="frame"')
         .replace(/\d(?=px monospace;)/, '4')
-        .replace(/(?<=line-height:)\d(?=px)/, glitchedLineHeight ? `${randoCoorp(5, 9)}` : '8')
         .replace(/line-height:\d+px;/g, '')
         .replace(/(?<=style="color:#)(\w+)(?=")/g, glitchedColour ? 'ff1493' : '$1')
         .replace(/(?<=>)(.)(?=<)/g, glitchedSmiley ? ':)' : '$1')
