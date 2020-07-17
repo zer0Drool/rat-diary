@@ -71,7 +71,7 @@ function coorpAnim() {
         currAnimFrameCoorp = 0;
     };
 
-    animTimeoutCoorp = setTimeout(coorpAnim, glitchedAnimSpeed ? randoCoorp(1, 70) : 30);
+    // animTimeoutCoorp = setTimeout(coorpAnim, glitchedAnimSpeed ? randoCoorp(1, 70) : 30);
 
 };
 
