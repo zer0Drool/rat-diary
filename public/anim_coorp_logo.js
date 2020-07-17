@@ -18,7 +18,7 @@ function fixGlitch(glitch) {
     if (glitch === 'glitchedAnimSpeed') {
         setTimeout(() => {
             glitchedAnimSpeed = false;
-        }, randoCoorp(3000, 4000));
+        }, randoCoorp(600, 1000));
     };
 
     if (glitch === 'glitchedSmiley') {
@@ -59,6 +59,7 @@ function coorpAnim() {
         .replace(/background-color:white;/, '')
         .replace(/<div/, '<div class="frame"')
         .replace(/\d(?=px monospace;)/, '4')
+        .replace(/monospace/, "'Roboto Mono', monospace")
         .replace(/line-height:\d+px;/g, '')
         .replace(/(?<=style="color:#)(\w+)(?=")/g, glitchedColour ? 'ff1493' : '$1')
         .replace(/(?<=>)(.)(?=<)/g, glitchedSmiley ? ':)' : '$1')

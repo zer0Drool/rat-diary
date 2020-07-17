@@ -227,6 +227,9 @@ function readDiary() {
         setTimeout(() => {
             terminal.style.opacity = '0';
             reaction.style.opacity = '0';
+            coorpWrap.style.top = '40%';
+            coorpWrap.style.right = '18%';
+            document.styleSheets[1].rules[2].style.fontSize = '8px';
             setTimeout(() => {
                 clearInterval(transferInt);
                 emoticons[0].children[0].innerText = '';
@@ -1409,3 +1412,4 @@ function transfer() {
 function rando(max, min) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 };
+console.log(document.styleSheets[1].rules[2].style.fontSize);
