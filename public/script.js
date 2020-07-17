@@ -177,11 +177,13 @@ function readDiary() {
             emoticons[1].children[0].innerText = '';
             reaction.style.display = 'none';
             coorpWrap.style.display = 'none';
-            diaryInt = setInterval(readDiary, 700);
+            // setTimeout(() => {
+            // }, 1800);
             setTimeout(() => {
+                diaryInt = setInterval(readDiary, 700);
                 reaction.style.display = 'flex';
                 coorpWrap.style.display = 'block';
-            }, 700);
+            }, 2500);
         }, 3000);
     } else if (diary[diaryCount] === 'LOGO') {
         let p = document.createElement('p');
@@ -222,7 +224,6 @@ function readDiary() {
                 terminal.innerHTML = '';
                 terminal.style.opacity = '1';
                 reaction.style.opacity = '1';
-                // coorpWrap.style.opacity = '1';
                 sleepInt = setInterval(sleep, 250);
                 setTimeout(() => {
                     clearInterval(sleepInt);
