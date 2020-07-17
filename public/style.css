@@ -120,6 +120,10 @@ video {
     animation: flash 0.3s ease-in-out infinite;
 }
 
+.invert {
+    animation: invert 0.3s ease-in-out 3;
+}
+
 @keyframes fade {
     0%   {opacity: 0; transform: translateY(10px)}
     100% {opacity: 1; transform: translateY(0px)}
@@ -129,4 +133,10 @@ video {
     0%   {opacity: 0}
     50%  {opacity: 1}
     100% {opacity: 0}
+}
+
+@keyframes invert {
+    0%   {filter: invert(0)}
+    50%  {filter: invert(1)}
+    100% {filter: invert(0)}
 }

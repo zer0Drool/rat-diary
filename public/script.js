@@ -112,6 +112,7 @@ X X X X"'=:|  ,  _)_ \__ . c\'-..
 let terminal = document.getElementById('terminal');
 let reaction = document.getElementById('reaction');
 let yeet = document.getElementsByClassName('yeet');
+let vid = document.getElementsByTagName('video')[0];
 let diaryInt;
 let diaryCount = 0;
 
@@ -177,13 +178,21 @@ function readDiary() {
             emoticons[1].children[0].innerText = '';
             reaction.style.display = 'none';
             coorpWrap.style.display = 'none';
-            // setTimeout(() => {
-            // }, 1800);
+            reaction.style.opacity = '0';
+            coorpWrap.style.opacity = '0';
+            // vid.pause();
+            // vid.classList.add('invert');
             setTimeout(() => {
                 diaryInt = setInterval(readDiary, 700);
                 reaction.style.display = 'flex';
                 coorpWrap.style.display = 'block';
-            }, 2500);
+            }, 2000);
+            setTimeout(() => {
+                reaction.style.opacity = '1';
+                coorpWrap.style.opacity = '1';
+                // vid.play();
+                // vid.classList.remove('invert');
+            }, 3800);
         }, 3000);
     } else if (diary[diaryCount] === 'LOGO') {
         let p = document.createElement('p');
