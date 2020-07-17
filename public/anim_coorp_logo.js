@@ -63,13 +63,14 @@ function coorpAnim() {
         .replace(/(?<=style="color:#)(\w+)(?=")/g, glitchedColour ? 'ff1493' : '$1')
         .replace(/(?<=>)(.)(?=<)/g, glitchedSmiley ? ':)' : '$1')
         .replace(/(?<=<span style="color:#)(\w+)(?=">)/g, '$1; text-shadow: 1px 1px 2px #$1')
+        .replace(/<span/g, '<span class="yeet"')
 
     currAnimFrameCoorp++;
     if (currAnimFrameCoorp > coorp.length - 1) {
         currAnimFrameCoorp = 0;
     };
 
-    animTimeoutCoorp = setTimeout(coorpAnim, glitchedAnimSpeed ? randoCoorp(1, 70) : 30);
+    // animTimeoutCoorp = setTimeout(coorpAnim, glitchedAnimSpeed ? randoCoorp(1, 70) : 30);
 
 };
 

@@ -106,11 +106,12 @@ X X X X"'=:|  ,  _)_ \__ . c\'-..
     `local storage: 4,269 directories found`,
     `3.2TB`,
     `filtering duplicate files`,
-    `begin transfer`
+    `TRANSFER`
 ];
 
 let terminal = document.getElementById('terminal');
 let reaction = document.getElementById('reaction');
+let yeet = document.getElementsByClassName('yeet');
 let diaryInt;
 let diaryCount = 0;
 
@@ -174,7 +175,13 @@ function readDiary() {
             terminal.innerHTML = '';
             emoticons[0].children[0].innerText = '';
             emoticons[1].children[0].innerText = '';
+            reaction.style.display = 'none';
+            coorpWrap.style.display = 'none';
             diaryInt = setInterval(readDiary, 700);
+            setTimeout(() => {
+                reaction.style.display = 'flex';
+                coorpWrap.style.display = 'block';
+            }, 700);
         }, 3000);
     } else if (diary[diaryCount] === 'LOGO') {
         let p = document.createElement('p');
@@ -186,6 +193,13 @@ function readDiary() {
         emoticons[1].children[0].innerText = '';
         let p = document.createElement('p');
         p.innerText = 'USB 3.0 port found';
+        p.classList.add('fade');
+        terminal.appendChild(p);
+    } else if (diary[diaryCount] === 'TRANSFER') {
+        transferInt = setInterval(transfer, 100);
+        emoticons[0].children[0].innerText = '';
+        let p = document.createElement('p');
+        p.innerText = 'begin transfer';
         p.classList.add('fade');
         terminal.appendChild(p);
     } else {
@@ -203,9 +217,12 @@ function readDiary() {
             terminal.style.opacity = '0';
             reaction.style.opacity = '0';
             setTimeout(() => {
+                clearInterval(transferInt);
+                emoticons[0].children[0].innerText = '';
                 terminal.innerHTML = '';
                 terminal.style.opacity = '1';
                 reaction.style.opacity = '1';
+                // coorpWrap.style.opacity = '1';
                 sleepInt = setInterval(sleep, 250);
                 setTimeout(() => {
                     clearInterval(sleepInt);
@@ -213,7 +230,7 @@ function readDiary() {
                     emoticons[0].children[0].innerText = '';
                     diaryInt = setInterval(readDiary, 700);
                 }, 5000);
-            }, 10000);
+            }, 20000);
         }, 5000);
     };
 
@@ -1347,6 +1364,30 @@ function shock() {
     shockCount++;
     if (shockCount === shocking.length) {
         shockCount = 0;
+    };
+
+};
+
+
+//≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠
+
+
+let transferInt;
+let transferCount = 0;
+
+let transfering = [
+`                  ♡（＾ω＾）♡`,
+`                 ♡ （＾ω＾） ♡`,
+`                ♡  （＾ω＾）  ♡`,
+`               ♡   （＾ω＾）   ♡`,
+];
+
+function transfer() {
+
+    emoticons[0].children[0].innerText = transfering[transferCount];
+    transferCount++;
+    if (transferCount === transfering.length) {
+        transferCount = 0;
     };
 
 };
