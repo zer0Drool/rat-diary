@@ -22,12 +22,13 @@ body {
 } */
 
 #coorp-wrap {
-    width: 600px;
+    /* width: 600px; */
+    width: 14vw;
     overflow: hidden;
     position: absolute;
     z-index: 5;
-    top: 10px;
-    right: -390px;
+    top: 3vh;
+    right: 3vw;
     transition: opacity 1.5s ease-in-out;
 }
 
