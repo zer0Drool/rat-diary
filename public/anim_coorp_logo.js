@@ -58,13 +58,13 @@ function coorpAnim() {
         .replace(/body/g, 'div')
         .replace(/background-color:white;/, '')
         .replace(/<div/, '<div class="frame"')
-        .replace(/9px monospace/, "0.3vw 'Roboto Mono', monospace")
+        .replace(/9px monospace/, `0.3vw 'Roboto Mono', monospace`)
         // .replace(/monospace/, "'Roboto Mono', monospace")
         .replace(/line-height:\d+px;/g, '')
         .replace(/(?<=style="color:#)(\w+)(?=")/g, glitchedColour ? 'ff1493' : '$1')
         .replace(/(?<=>)(.)(?=<)/g, glitchedSmiley ? ':)' : '$1')
         .replace(/(?<=<span style="color:#)(\w+)(?=">)/g, '$1; text-shadow: 1px 1px 2px #$1')
-        .replace(/<span/g, '<span class="yeet"')
+        // .replace(/<span/g, '<span class="yeet"')
 
     currAnimFrameCoorp++;
     if (currAnimFrameCoorp > coorp.length - 1) {

@@ -17,20 +17,35 @@ body {
     overflow: hidden;
 }
 
-/* .yeet {
-    font-size: 4px;
-} */
+#coorp-outer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 5;
+    top: 1vh;
+    right: 2vw;
+}
+
+.coorp-full-screen {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    right: 0;
+}
 
 #coorp-wrap {
     /* width: 600px; */
     width: 14vw;
     overflow: hidden;
-    position: absolute;
-    z-index: 5;
-    top: 3vh;
-    right: 3vw;
+    /* position: absolute; */
     transition: opacity 1.5s ease-in-out;
 }
+
+/* .frame {
+    font-size: 0.5vw;
+    font-family: 'Roboto Mono', monospace;
+} */
 
 #terminal, #reaction {
     display: flex;

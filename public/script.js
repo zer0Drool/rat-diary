@@ -113,6 +113,7 @@ let terminal = document.getElementById('terminal');
 let reaction = document.getElementById('reaction');
 let yeet = document.getElementsByClassName('yeet');
 let vid = document.getElementsByTagName('video')[0];
+let coorpOuter = document.getElementById('coorp-outer');
 let diaryInt;
 let diaryCount = 0;
 
@@ -227,10 +228,12 @@ function readDiary() {
         setTimeout(() => {
             terminal.style.opacity = '0';
             reaction.style.opacity = '0';
-            coorpWrap.style.top = '40%';
-            coorpWrap.style.right = '18%';
-            document.styleSheets[1].rules[2].style.fontSize = '8px';
             setTimeout(() => {
+                coorpOuter.classList.add('coorp-full-screen');
+            }, 2000);
+            // document.styleSheets[1].rules[2].style.fontSize = '8px';
+            setTimeout(() => {
+                coorpOuter.classList.remove('coorp-full-screen');
                 clearInterval(transferInt);
                 emoticons[0].children[0].innerText = '';
                 terminal.innerHTML = '';
@@ -1413,3 +1416,8 @@ function rando(max, min) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 console.log(document.styleSheets[1].rules[2].style.fontSize);
+
+// coorpWrap.style.top = '37vh';
+// coorpWrap.style.right = '43vw';
+// coorpWrap.style.width = '30vw';
+// coorpWrap.innerHTML = coorp[currAnimFrameCoorp].replace(/9px monospace/, "0.5vw 'Roboto Mono', monospace")
