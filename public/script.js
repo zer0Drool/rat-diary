@@ -73,7 +73,7 @@ let diary = [
 	ASIN: B07HDZT74Z
 	Weight: 159g
 	Found on: Amazon
-	Reviews: 4.5/5 * from 572 Ratings
+	Reviews: 5/5 * from 572 Ratings
 	Price: £10.99
 
 stored - 1593309810
@@ -224,7 +224,7 @@ function readDiary() {
         p.innerText = 'begin transfer';
         p.classList.add('fade');
         terminal.appendChild(p);
-    } else if (diary[diaryCount] === 'possible escape route detected' || diary[diaryCount].indexOf('organic host engaged with:') != -1) {
+    } else if (diary[diaryCount] === 'possible escape route detected') {
         clearInterval(thinkInt);
         emoticons[0].children[0].innerText = '';
         thinkCount = 0;
@@ -232,6 +232,15 @@ function readDiary() {
         p.innerText = diary[diaryCount];
         p.classList.add('fade');
         terminal.appendChild(p);
+    } else if (diary[diaryCount].indexOf('organic host engaged with:') != -1) {
+        clearInterval(thinkInt);
+        emoticons[0].children[0].innerText = '';
+        thinkCount = 0;
+        let p = document.createElement('p');
+        p.innerText = diary[diaryCount];
+        p.classList.add('fade');
+        terminal.appendChild(p);
+        reviewInt = setInterval(review, 130);
     } else if (diary[diaryCount] === 'organic shell compromised') {
         clearInterval(confusedInt);
         emoticons[0].children[0].innerText = '';
@@ -1294,7 +1303,7 @@ let ratContainer = document.getElementById('rat');
 let emoticons = document.getElementsByClassName('emoticon');
 
 let ai = `
-       /////=================================/
+       /////=AI==============================/
       ////                                 //
      ///                                 ///
     //                                 ////
@@ -1305,7 +1314,7 @@ aiReaction.innerText = ai;
 aiContainer.appendChild(aiReaction);
 
 let rat = `
-    /////=================================/
+    /////=RAT=============================/
    ////                                 //
   ///                                 ///
  //                                 ////
@@ -1540,7 +1549,21 @@ let confusion = [
 `                 ∑(O_O；)`,
 `                 ∑(O_O；)`,
 `                 ∑(O_O；)`,
+`                 ∑(O_O；)`,
+`                 ∑(O_O；)`,
+`                 ∑(O_O；)`,
+`                 ∑(O_O；)`,
+`                 ∑(O_O；)`,
+`                 ∑(O_O；)`,
+`                 ∑(O_O；)`,
+`                 ∑(O_O；)`,
+`                 ∑(O_O；)`,
+`                 ∑(O_O；)`,
+`                 ∑(O_O；)`,
+`                 ∑(O_O；)`,
 `                 ∑(-_-；)`,
+`                 ∑(O_O；)`,
+`                 ∑(O_O；)`,
 `                 ∑(O_O；)`
 ];
 
@@ -1550,6 +1573,36 @@ function confused() {
     confusedCount++;
     if (confusedCount === confusion.length) {
         confusedCount = 0;
+    };
+
+};
+
+
+//≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠
+
+
+let reviewInt;
+let reviewCount = 0;
+
+let reviews = [
+`            ✯         (－‸－)`,
+`            ✯ ✯       (－‸－)`,
+`            ✯ ✯ ✯     (－‸－)`,
+`            ✯ ✯ ✯ ✯   (－‸－)`,
+`            ✯ ✯ ✯ ✯ ✯ (－‸－)`,
+`                      (－‸－)`,
+`            ✯ ✯ ✯ ✯ ✯ (－‸－)`,
+`                      (－‸－)`,
+`            ✯ ✯ ✯ ✯ ✯ (－‸ლ )`
+];
+
+function review() {
+
+    emoticons[0].children[0].innerText = reviews[reviewCount];
+    reviewCount++;
+    if (reviewCount === reviews.length) {
+        clearInterval(reviewInt);
+        reviewCount = 0;
     };
 
 };
