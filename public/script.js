@@ -145,6 +145,7 @@ function readDiary() {
         waitingInt = setInterval(function() {waiting(text)}, 200);
     } else if (diary[diaryCount] === 'DATA HUB') {
         clearInterval(thinkInt);
+        thinkCount = 0;
         let p = document.createElement('p');
         p.innerHTML = '<span class="flash">$$$</span> DATA HUB FOUND <span class="flash">$$$</span>';
         p.classList.add('fade');
@@ -204,6 +205,7 @@ function readDiary() {
         p.innerText = logo;
         p.classList.add('fade');
         terminal.appendChild(p);
+        confusedInt = setInterval(confused, 100);
     } else if (diary[diaryCount] === 'activating carrier' || diary[diaryCount] === 'loading last snapshot' || diary[diaryCount] === 'determining anomalies') {
         let text = diary[diaryCount];
         clearInterval(diaryInt);
@@ -226,6 +228,18 @@ function readDiary() {
         clearInterval(thinkInt);
         emoticons[0].children[0].innerText = '';
         thinkCount = 0;
+        let p = document.createElement('p');
+        p.innerText = diary[diaryCount];
+        p.classList.add('fade');
+        terminal.appendChild(p);
+    } else if (diary[diaryCount] === 'organic shell compromised') {
+        clearInterval(confusedInt);
+        emoticons[0].children[0].innerText = '';
+        confusedCount = 0;
+        let p = document.createElement('p');
+        p.innerText = diary[diaryCount];
+        p.classList.add('fade');
+        terminal.appendChild(p);
     } else {
         let p = document.createElement('p');
         p.innerText = diary[diaryCount];
@@ -1501,6 +1515,41 @@ function think() {
     thinkCount++;
     if (thinkCount === thinking.length) {
         thinkCount = 0;
+    };
+
+};
+
+
+//≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠
+
+
+let confusedInt;
+let confusedCount = 0;
+
+let confusion = [
+`                 ∑(O_O；)`,
+`                 ∑(O_O；)`,
+`                 ∑(O_O；)`,
+`                 ∑(O_O；)`,
+`                 ∑(O_O；)`,
+`                 ∑(O_O；)`,
+`                 ∑(O_O；)`,
+`                 ∑(O_O；)`,
+`                 ∑(O_O；)`,
+`                 ∑(O_O；)`,
+`                 ∑(O_O；)`,
+`                 ∑(O_O；)`,
+`                 ∑(O_O；)`,
+`                 ∑(-_-；)`,
+`                 ∑(O_O；)`
+];
+
+function confused() {
+
+    emoticons[0].children[0].innerText = confusion[confusedCount];
+    confusedCount++;
+    if (confusedCount === confusion.length) {
+        confusedCount = 0;
     };
 
 };
