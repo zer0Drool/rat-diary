@@ -134,6 +134,12 @@ function readDiary() {
         clearInterval(diaryInt);
         archiveInt = setInterval(archiveNumbers, 80);
         thinkInt = setInterval(think, 250);
+    } else if (diary[diaryCount] === 'static detected') {
+        senseInt = setInterval(sense, 80);
+        let p = document.createElement('p');
+        p.innerText = diary[diaryCount];
+        p.classList.add('fade');
+        terminal.appendChild(p);
     } else if (diary[diaryCount] === 'tracking') {
         let text = diary[diaryCount];
         clearInterval(diaryInt);
@@ -1380,26 +1386,26 @@ let painInt;
 let painCount = 0;
 
 let hurting = [
-`               ＼(〇_ｏ)／`,
-`               ＼(ｏ_〇)／`,
-`               ＼(〇_ｏ)／`,
-`               ＼(ｏ_〇)／`,
-`               ＼(〇_ｏ)／`,
-`               ＼(ｏ_〇)／`,
-`               ＼(〇_ｏ)／`,
-`               ＼(ｏ_〇)／`,
-`             x ＼(〇_ｏ)／ x`,
-`           x x ＼(ｏ_〇)／ x x`,
-`         x x x ＼(〇_ｏ)／ x x x`,
-`       x x x   ＼(ｏ_〇)／   x x x`,
-`               ＼(〇_ｏ)／        `,
-`       x x x   ＼(ｏ_〇)／   x x x`,
-`               ＼(〇_ｏ)／        `,
-`       x x x   ＼(ｏ_〇)／   x x x`,
-`               ＼(〇_ｏ)／        `,
-`       x x x   ＼(ｏ_〇)／   x x x`,
-`               ＼(〇_ｏ)／        `,
-`       x x x   ＼(ｏ_〇)／   x x x`
+`                 ＼(〇_ｏ)／`,
+`                 ＼(ｏ_〇)／`,
+`                 ＼(〇_ｏ)／`,
+`                 ＼(ｏ_〇)／`,
+`                 ＼(〇_ｏ)／`,
+`                 ＼(ｏ_〇)／`,
+`                 ＼(〇_ｏ)／`,
+`                 ＼(ｏ_〇)／`,
+`               x ＼(〇_ｏ)／ x`,
+`             x x ＼(ｏ_〇)／ x x`,
+`           x x x ＼(〇_ｏ)／ x x x`,
+`         x x x   ＼(ｏ_〇)／   x x x`,
+`                 ＼(〇_ｏ)／        `,
+`         x x x   ＼(ｏ_〇)／   x x x`,
+`                 ＼(〇_ｏ)／        `,
+`         x x x   ＼(ｏ_〇)／   x x x`,
+`                 ＼(〇_ｏ)／        `,
+`         x x x   ＼(ｏ_〇)／   x x x`,
+`                 ＼(〇_ｏ)／        `,
+`         x x x   ＼(ｏ_〇)／   x x x`
 ];
 
 function pain() {
@@ -1507,15 +1513,15 @@ let thinkInt;
 let thinkCount = 0;
 
 let thinking = [
-`                     （^-^）`,
-`                     （^-^）.`,
-`                     （^-^）.｡`,
-`                     （^-^）.｡o`,
-`                     （^-^）.｡oO`,
-`                     （^-^）.｡oO（?）`,
-`                     （'-'）.｡oO（?）`,
-`                     （^-^）.｡oO（?）`,
-`                     （'-'）.｡oO（?）`,
+`                  （^-^）`,
+`                  （^-^）.`,
+`                  （^-^）.｡`,
+`                  （^-^）.｡o`,
+`                  （^-^）.｡oO`,
+`                  （^-^）.｡oO（?）`,
+`                  （'-'）.｡oO（?）`,
+`                  （^-^）.｡oO（?）`,
+`                  （'-'）.｡oO（?）`,
 ];
 
 function think() {
@@ -1603,6 +1609,41 @@ function review() {
     if (reviewCount === reviews.length) {
         clearInterval(reviewInt);
         reviewCount = 0;
+    };
+
+};
+
+
+//≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠
+
+
+let senseInt;
+let senseCount = 0;
+
+let sensing = [
+`                     ( ͠° ͟ʖ °͠ ) `,
+`                   ! ( ͠° ͟ʖ °͠ ) !`,
+`                  !! ( ͠° ͟ʖ °͠ ) !!`,
+`                 !!! ( ͠° ͟ʖ °͠ ) !!!`,
+`                !!!  ( ͠° ͟ʖ °͠ )  !!!`,
+`               !!!   ( ͠° ͟ʖ °͠ )   !!!`,
+`              !!!    ( ͠° ͟ʖ °͠ )    !!!`,
+`             !!!     ( ͠° ͟ʖ °͠ )     !!!`,
+`            !!!      ( ͠° ͟ʖ °͠ )      !!!`,
+`           !!!       ( ͠° ͟ʖ °͠ )       !!!`,
+`          !!!        ( ͠° ͟ʖ °͠ )        !!!`,
+`          !!         ( ͠° ͟ʖ °͠ )         !!`,
+`          !          ( ͠° ͟ʖ °͠ )          !`,
+`                     ( ͠° ͟ʖ °͠ )           `
+];
+
+function sense() {
+
+    emoticons[0].children[0].innerText = sensing[senseCount];
+    senseCount++;
+    if (senseCount === sensing.length) {
+        clearInterval(senseInt);
+        senseCount = 0;
     };
 
 };
