@@ -175,6 +175,9 @@ function readDiary() {
         damageInt = setInterval(ouch, 400);
     } else if (diary[diaryCount] === 'MERGE') {
         clearInterval(diaryInt);
+        clearInterval(cryInt);
+        emoticons[1].children[0].innerText = '';
+        cryCount = 0;
         mergeInt = setInterval(merge, 100);
     } else if (diary[diaryCount] === 'REBOOT') {
         clearInterval(diaryInt);
@@ -212,6 +215,7 @@ function readDiary() {
         p.classList.add('fade');
         terminal.appendChild(p);
         confusedInt = setInterval(confused, 100);
+        cryInt = setInterval(cry, 150);
     } else if (diary[diaryCount] === 'activating carrier' || diary[diaryCount] === 'loading last snapshot' || diary[diaryCount] === 'determining anomalies') {
         let text = diary[diaryCount];
         clearInterval(diaryInt);
@@ -453,7 +457,7 @@ function archiveNumbers() {
         };
 
         // percentage = percentage * 1.8;
-        percentage += rando(10, 0);
+        percentage += rando(25, 1);
         if (percentage > 100) {
             percentage = 100;
             clearInterval(percentInt);
@@ -1644,6 +1648,45 @@ function sense() {
     if (senseCount === sensing.length) {
         clearInterval(senseInt);
         senseCount = 0;
+    };
+
+};
+
+
+//≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠
+
+
+let cryInt;
+let cryCount = 0;
+
+let crying = [
+`                   (>▂<)`,
+`                   (>▂<)`,
+`                   (>▂<)`,
+`                   (>▂<)`,
+`                   (>▂<)`,
+`                   (>▂<)`,
+`                   (>▂<)`,
+`                  '(>▂<)'`,
+`                 ¯'(>▂<)'¯`,
+`                '¯'(>▂<)'¯'`,
+`               ·'¯ (>▂<) ¯'·`,
+`              .·'  (>▂<)  '·.`,
+`              .·  '(>▂<)'  ·.`,
+`              .  ¯'(>▂<)'¯  .`,
+`                '¯'(>▂<)'¯'`,
+`               ·'¯'(>▂<)'¯'·`,
+`              .·'¯'(>▂<)'¯'·.`,
+`              .·'¯'(>▂<)'¯'·.`,
+`              .·'¯'(>▂<)'¯'·.`
+];
+
+function cry() {
+
+    emoticons[1].children[0].innerText = crying[cryCount];
+    cryCount++;
+    if (cryCount === crying.length) {
+        cryCount = 0;
     };
 
 };
