@@ -54,9 +54,9 @@ let diary = [
     `REBOOT`,
     `LOGO`,
     `system analysis`,
-    `activating carrier 100%`,
-    `loading last snapshot 100%`,
-    `determining anomalies 100%`,
+    `activating carrier`,
+    `loading last snapshot`,
+    `determining anomalies`,
     `cannot play feedback`,
     `compiling errors`,
     `organic shell compromised`,
@@ -133,6 +133,7 @@ function readDiary() {
     } else if (diary[diaryCount] === 'ARCHIVE') {
         clearInterval(diaryInt);
         archiveInt = setInterval(archiveNumbers, 80);
+        thinkInt = setInterval(think, 250);
     } else if (diary[diaryCount] === 'tracking') {
         let text = diary[diaryCount];
         clearInterval(diaryInt);
@@ -143,10 +144,12 @@ function readDiary() {
         clearInterval(diaryInt);
         waitingInt = setInterval(function() {waiting(text)}, 200);
     } else if (diary[diaryCount] === 'DATA HUB') {
+        clearInterval(thinkInt);
         let p = document.createElement('p');
         p.innerHTML = '<span class="flash">$$$</span> DATA HUB FOUND <span class="flash">$$$</span>';
         p.classList.add('fade');
         terminal.appendChild(p);
+        excitedInt = setInterval(excited, 200);
     } else if (diary[diaryCount] === 'ACCURACY') {
         let p = document.createElement('p');
         p.innerText = `${rando(95, 72)}% certainty - diverting course`;
@@ -155,6 +158,7 @@ function readDiary() {
     } else if (diary[diaryCount] === 'ERROR') {
         clearInterval(diaryInt);
         clearInterval(runInt);
+        clearInterval(excitedInt);
         emoticons[1].children[0].innerText = '';
         shockInt = setInterval(shock, 100);
         painInt = setInterval(pain, 250);
@@ -200,6 +204,10 @@ function readDiary() {
         p.innerText = logo;
         p.classList.add('fade');
         terminal.appendChild(p);
+    } else if (diary[diaryCount] === 'activating carrier' || diary[diaryCount] === 'loading last snapshot' || diary[diaryCount] === 'determining anomalies') {
+        let text = diary[diaryCount];
+        clearInterval(diaryInt);
+        percentInt = setInterval(function() {percent(text)}, 200);
     } else if (diary[diaryCount] === 'USB') {
         clearInterval(runInt);
         emoticons[1].children[0].innerText = '';
@@ -214,6 +222,10 @@ function readDiary() {
         p.innerText = 'begin transfer';
         p.classList.add('fade');
         terminal.appendChild(p);
+    } else if (diary[diaryCount] === 'possible escape route detected' || diary[diaryCount].indexOf('organic host engaged with:') != -1) {
+        clearInterval(thinkInt);
+        emoticons[0].children[0].innerText = '';
+        thinkCount = 0;
     } else {
         let p = document.createElement('p');
         p.innerText = diary[diaryCount];
@@ -392,6 +404,36 @@ function archiveNumbers() {
     };
 
 };
+
+
+// ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠
+
+
+    let percentInt;
+    let percentFirst = true;
+    let percentage = 1;
+    let percentP;
+
+    function percent(text) {
+        if (percentFirst) {
+            percentage = 1;
+            percentP = document.createElement('p');
+            percentP.classList.add('fade');
+            terminal.appendChild(percentP);
+            percentFirst = false;
+        };
+
+        // percentage = percentage * 1.8;
+        percentage += rando(10, 0);
+        if (percentage > 100) {
+            percentage = 100;
+            clearInterval(percentInt);
+            diaryInt = setInterval(readDiary, 700);
+            // percentage = 1;
+            percentFirst = true;
+        };
+        percentP.innerText = `{${text} ${Math.floor(percentage)}%}`;
+    }
 
 
 // ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠
@@ -1395,7 +1437,7 @@ let transfering = [
 `                  ♡（＾ω＾）♡`,
 `                 ♡ （＾ω＾） ♡`,
 `                ♡  （＾ω＾）  ♡`,
-`               ♡   （＾ω＾）   ♡`,
+`               ♡   （＾ω＾）   ♡`
 ];
 
 function transfer() {
@@ -1409,15 +1451,64 @@ function transfer() {
 };
 
 
+//≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠
+
+
+let excitedInt;
+let excitedCount = 0;
+
+let exciting = [
+`                ╲(｡◕‿◕｡)╱ ⁎: ✰ ﾟ✧`,
+`                ╲(｡◕‿◕｡)╱  : ✰ ﾟ✧`,
+`                ╲(｡◕‿◕｡)╱ ⁎  ✰ ﾟ✧`,
+`                ╲(｡◕‿◕｡)╱ ⁎:   ﾟ✧`,
+`                ╲(｡◕‿◕｡)╱ ⁎: ✰  ✧`,
+`                ╲(｡◕‿◕｡)╱ ⁎: ✰ ﾟ `
+];
+
+function excited() {
+
+    emoticons[0].children[0].innerText = exciting[excitedCount];
+    excitedCount++;
+    if (excitedCount === exciting.length) {
+        excitedCount = 0;
+    };
+
+};
+
+
+//≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠
+
+
+let thinkInt;
+let thinkCount = 0;
+
+let thinking = [
+`                     （^-^）`,
+`                     （^-^）.`,
+`                     （^-^）.｡`,
+`                     （^-^）.｡o`,
+`                     （^-^）.｡oO`,
+`                     （^-^）.｡oO（?）`,
+`                     （'-'）.｡oO（?）`,
+`                     （^-^）.｡oO（?）`,
+`                     （'-'）.｡oO（?）`,
+];
+
+function think() {
+
+    emoticons[0].children[0].innerText = thinking[thinkCount];
+    thinkCount++;
+    if (thinkCount === thinking.length) {
+        thinkCount = 0;
+    };
+
+};
+
+
 // M I S C ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠
 
 
 function rando(max, min) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 };
-console.log(document.styleSheets[1].rules[2].style.fontSize);
-
-// coorpWrap.style.top = '37vh';
-// coorpWrap.style.right = '43vw';
-// coorpWrap.style.width = '30vw';
-// coorpWrap.innerHTML = coorp[currAnimFrameCoorp].replace(/9px monospace/, "0.5vw 'Roboto Mono', monospace")
