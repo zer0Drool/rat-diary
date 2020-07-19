@@ -145,7 +145,7 @@ function readDiary() {
         clearInterval(diaryInt);
         waitingInt = setInterval(function() {waiting(text)}, 200);
         runInt = setInterval(run, 250);
-    } else if (diary[diaryCount] === 'unsetting mouse trap' || diary[diaryCount] === 'localise' || diary[diaryCount] === 'entering rat vision' || diary[diaryCount] === 'diverting power to s-STRUT D + s-STRUT E ( rat arms ) && recomense unsetting && break mouse trap') {
+    } else if (diary[diaryCount] === 'localise' || diary[diaryCount] === 'entering rat vision' || diary[diaryCount] === 'diverting power to s-STRUT D + s-STRUT E ( rat arms ) && recomense unsetting && break mouse trap') {
         let text = diary[diaryCount];
         clearInterval(diaryInt);
         waitingInt = setInterval(function() {waiting(text)}, 200);
@@ -180,7 +180,13 @@ function readDiary() {
         cryCount = 0;
         mergeInt = setInterval(merge, 100);
         joinInt = setInterval(join, 200);
+    } else if (diary[diaryCount] === 'unsetting mouse trap') {
+        let text = diary[diaryCount];
+        clearInterval(diaryInt);
+        waitingInt = setInterval(function () { waiting(text) }, 200);
+        weakInt = setInterval(weak, 300);
     } else if (diary[diaryCount] === 'overclocking') {
+        clearInterval(weakInt);
         flexInt = setInterval(flex, 150);
         let p = document.createElement('p');
         p.innerText = diary[diaryCount];
@@ -1883,6 +1889,7 @@ function weak() {
 
 };
 
+
 //≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠
 
 
@@ -1918,6 +1925,32 @@ function cry() {
     cryCount++;
     if (cryCount === crying.length) {
         cryCount = 0;
+    };
+
+};
+
+
+//≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠
+
+
+let fightInt;
+let fightCount = 0;
+//(∩'-')⊃ ─=≡ΣO))))))))))
+let fightingRat = [
+    `                ('-'∩)⊃`,
+];
+
+let fightingAI = [
+`                   (>▂<)`,
+];
+
+function fight() {
+
+    emoticons[1].children[0].innerText = fighting[fightCount];
+    
+    fightCount++;
+    if (fightCount === fighting.length) {
+        fightCount = 0;
     };
 
 };
