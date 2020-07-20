@@ -114,15 +114,29 @@ let reaction = document.getElementById('reaction');
 let yeet = document.getElementsByClassName('yeet');
 let vid = document.getElementsByTagName('video')[0];
 let coorpOuter = document.getElementById('coorp-outer');
+let enterWrap = document.getElementById('enter-wrap');
+let audio = document.getElementsByTagName('audio')[0];
 let diaryInt;
 let diaryCount = 0;
 
-setTimeout(() => {
-    clearInterval(sleepInt);
-    sleepCount = 0;
-    emoticons[0].children[0].innerText = '';
-    diaryInt = setInterval(readDiary, 700);
-}, 5000);
+document.addEventListener('keydown', (e) => {
+    if (e.code === 'Enter') {
+        console.log('yeet');
+        enterWrap.style.display = 'none';
+        audio.play();
+        clearInterval(sleepInt);
+        sleepCount = 0;
+        emoticons[0].children[0].innerText = '';
+        diaryInt = setInterval(readDiary, 700);
+    };
+});
+
+// setTimeout(() => {
+//     clearInterval(sleepInt);
+//     sleepCount = 0;
+//     emoticons[0].children[0].innerText = '';
+//     diaryInt = setInterval(readDiary, 700);
+// }, 5000);
 
 function readDiary() {
 
