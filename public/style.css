@@ -83,6 +83,7 @@ body {
 }
 
 #enter {
+    font-size: 0.85vw;
     border: 1px solid deeppink;
     padding: 0 4px 2px 4px;
     box-shadow: 1px 1px 5px red;
